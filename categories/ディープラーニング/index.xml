@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ディープラーニング on KBSIs' Blog</title><link>https://idichi.tk/categories/%E3%83%87%E3%82%A3%E3%83%BC%E3%83%97%E3%83%A9%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0/</link><description>Recent content in ディープラーニング on KBSIs' Blog</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Thu, 17 Dec 2020 15:16:05 +0900</lastBuildDate><atom:link href="https://idichi.tk/categories/%E3%83%87%E3%82%A3%E3%83%BC%E3%83%97%E3%83%A9%E3%83%BC%E3%83%8B%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>【調査中】ArcFaceなどのメトリックラーニング</title><link>https://idichi.tk/blog/servay-arcface/</link><pubDate>Thu, 17 Dec 2020 15:16:05 +0900</pubDate><guid>https://idichi.tk/blog/servay-arcface/</guid><description>ArcFaceって ArcFaceは顔認証を行えるメトリックラーニングの構造のこと．
+ArcFaceは入力されたデータに対して，一人の画像に対するユニークな特徴ベクトルを算出する．
+例えばA,B,C,&amp;hellip; という人物の画像が一人に対して，複数毎あったとする． Aの画像が入力されたときArcFaceはY_Aのベクトルを算出するよう学習する． 一方，Bの画像が入力されたときもY_Bを算出する.
+これにより，未知の人物の画像が入力されたときも，人物ごとにユニークなベクトルを算出することによって，
+ベクトル間のCos類似度を求めることにより，同一人物かを判定することが可能になる．
+元論文のarXiv
+インストール 論文の著者が実装と学習済みの重みを公開している．
+Mxnetというフレームワークだが，ArcFaceを使うだけなら何も気にすることはない．
+実行には
+$ pip3 install mxnet==1.6.0 が必要である． ただし，GPU環境の場合，cuda==10.2をインストールし，
+$ pip3 install mxnet-cu102==1.6.0 を実行する．
+あとは，
+$ pip3 install -U insightface でインストールは完了．
+試す 基本的には，チュートリアルを参考にライブラリを読み解いていく．
+自分でも，少し試したので，jupyter notebookを貼っておく．
+不明点 論文や解説記事を読んでArcFaceの学習方法は理解したものの，肝心の顔認証データセットの目的変数がわからない．具体的には，ユニークなIDをどうやって，つけているのか．論文中に各データセットの示された人物の数は一定でないから．
+[追記] 論文をよく見ると，参考文献として， [32] Y. Sun, Y. Chen, X. Wang, and X. Tang. Deep learning face representation by joint identification-verification. In NIPS, 2014. が載っていた． これによるとDeepIDを用いて特徴ベクトルを決定するとある． DeepIDについては，解説記事を発見した． 参考記事
+これを用いてDeepIDをつけているのか納得．なお，参考記事はDeepID 1について解説されているが，参考文献はDeepID2について説明されている． おおむねは同じだが，違いは，顔のパーツ位置（face landmark）による畳み込み前の整列や特徴ベクトルを200次元まで拡張した，ネットワークを深くしたなどの違いがある．（詳しく論文見てないけど）
+結論 参考文献を読もう．</description></item><item><title>＜AI開発 part 1＞日本人のタレントの顔画像と年齢のデータを集める</title><link>https://idichi.tk/blog/20200225/</link><pubDate>Tue, 25 Feb 2020 21:16:05 +0900</pubDate><guid>https://idichi.tk/blog/20200225/</guid><description>＜追記＞ 著作権については、研究開発目的であり、許諾なしで利用可能である。 詳しくはリンクで確認してほしい。(https://storialaw</description></item><item><title>AIで宝くじを当てる！（今すぐ試せるソースコード付き！！）</title><link>https://idichi.tk/blog/20200119/</link><pubDate>Sun, 19 Jan 2020 21:16:05 +0900</pubDate><guid>https://idichi.tk/blog/20200119/</guid><description>ディープラーニングで宝くじ（ロト６） ロト６は１～４３の番号を6個選ぶ、くじのことである。 AIに入力するデータは、以前のあたり番号を入力にして</description></item><item><title>【文系理系必見】仕事を奪う「AI」を4分で解説</title><link>https://idichi.tk/blog/advent-hack/</link><pubDate>Sun, 22 Dec 2019 15:16:05 +0900</pubDate><guid>https://idichi.tk/blog/advent-hack/</guid><description>ディープラーニングの基礎を4分で解説 本記事は大阪工業大学アドベントカレンダー 12/22枠に投稿するために書かれたものです．詳しくは最後に．
+短い自己紹介 名前は伊地知翔也と言います．高校時代からニューラルネットワークを研究し，高速化手法を開発，SSH研究発表に招待され研究成果を発表しました! 詳しくはこちら
+ほんとに足し算と掛け算だけ？ AIが仕事を奪うという流行り言葉はすでに沢山の人が聞いたことがあると思う．しかし，肝心の仕組みはまったく知らない人が多いと感じる．
+例えば，AIアシスタント などの仕組みしろうと思えば，深い数学知識が必要になるが，AIのそもそもの原理はいたって単純だ．原理から出発すれば，意外と簡単なことに気づくと思う．
+では，4分タイマースタート！！ 判断を代替するAIを考える ここでは焼肉に誘われたときの判断をAIにさせることを考える．
+判断するのに必要な要素 まず，焼肉に誘われたら何を考えるだろうか？
+お店の質
+お店の値段
+友好度(誘ってきたメンツ)
+&amp;hellip;
+など，さまざまな情報の中から判断する．
+また，その中の情報でも，人によって，どれを優先するかも異なる．
+（値段を重要視する人もいれば，メンツを重要視する人もいる．） これらを合計して，ある一定の値になれば誘いを受ける（行く）のではないだろうか． これらを数式で落とし込んでみる．
+まず，判断の元となる情報(条件)を $$
+\begin{align} &amp;amp;x_1 \quad(焼肉のお店の質)\\\ &amp;amp;x_2 \quad(お店の値段)\\\ &amp;amp;x_3 \quad(友好度)\\\ &amp;amp;&amp;hellip; \quad(他の条件)\\\ &amp;amp;x_n \quad(条件はn個ある) \end{align} $$
+次に優先度（ここから重みと呼ぶことにする）を $$ \begin{align} &amp;amp;w_1\quad (お店の質を重要視する度合い) \\\ &amp;amp;w_2\quad (お店の値段を重要視する度合い) \\\ &amp;amp;w_3 \quad (誘ってきたメンツを重要視する度合い) \\\ &amp;amp;&amp;hellip;\quad (他の条件を重要視する度合い) \\\ &amp;amp;w_n \quad (n個目の条件を重要視する度合い) \\\ \end{align} $$
+とする．これをかけて足した値(yとする)が判断の値となるので， $$ y=(x_1 \times w_1) + (x_2 \times w_2) + (x_3 \times w_3) +&amp;hellip;+(x_n \times w_n) $$ 判断の値一定以上(θとする)になるとき，行く（誘いを受ける）ので，行く時を1 行かない時を0とする． 活性化関数と呼ぶが本記事では名前は気にしなくていい:） $$ \begin{eqnarray} 行く(1)行かない(0) = \begin{cases} 1 &amp;amp; ( y \geqq θ ) \quad yがθ(基準)以上なら行く \\\ 0 &amp;amp; ( y &amp;lt; θ ) \quad yがθ(基準)を下回ったら行かない \end{cases} \end{eqnarray} $$</description></item><item><title>Jetson NanoにDarknetをインストールする方法</title><link>https://idichi.tk/blog/jetson-darknet/</link><pubDate>Thu, 19 Dec 2019 21:16:05 +0900</pubDate><guid>https://idichi.tk/blog/jetson-darknet/</guid><description>what&amp;rsquo;s darknet? Darknetとは物体認識系ディープラーニングモデルの一つYoloのC言語実装のこと． ここで，簡単に経緯を話すと，現在，私はロボカッププ</description></item><item><title>Posenet-Pythonを使いやすく改良した．</title><link>https://idichi.tk/blog/posenet/</link><pubDate>Sat, 09 Nov 2019 23:43:08 +0900</pubDate><guid>https://idichi.tk/blog/posenet/</guid><description>PoseNet-Python改良してみた． What&amp;rsquo;s PoseNet ? Posenetは画像，ビデオから人の関節位置や目の位置などを座標形式で出してくれる．ディープ</description></item></channel></rss>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>登壇 on KBSIs' Blog</title><link>https://idichi.tk/categories/%E7%99%BB%E5%A3%87/</link><description>Recent content in 登壇 on KBSIs' Blog</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Sat, 10 Apr 2021 21:16:05 +0900</lastBuildDate><atom:link href="https://idichi.tk/categories/%E7%99%BB%E5%A3%87/index.xml" rel="self" type="application/rss+xml"/><item><title>高校三年生のときに研究してました</title><link>https://idichi.tk/blog/highschool-study/</link><pubDate>Sat, 10 Apr 2021 21:16:05 +0900</pubDate><guid>https://idichi.tk/blog/highschool-study/</guid><description>高校三年時の研究成果 詳しくは，AboutMeを見てほしいですが，中学生からもともとAIに興味がありました．
+高校三年時に進級した際に本格的にAIを学ぼうと思い，ディープラーニングの基礎であるニューラルネットワークを勉強，研究したところ，ニューラルネットワークの高速化手法を開発し，SSH研究発表（文部科学省主催）という高校生が大学教授の前で自らの研究発表を行う会に選ばれ，発表を行いました．
+ちなみに，SSHとはSuper Science Highschoolのことで母校はこれの指定を受けておりました．
+単独研究で発表まで至ったのは母校で私がはじめてです．
+これは，在校生徒と招待校あわせ，1000人の前で登壇しました． なお，これらの研究成果は文部科学省に提出しています．（疑義がある方は私の母校へ問い合わせるか，文部科学省に問い合わせてください．）
+基礎研究と応用研究 基礎研究は，ニューラルネットワークの高速化です． これは主に一般にいう，プルーニングです． 応用研究は，ニューラルネットワークを応用した歌声から曲を検索するシステムです． フーリエ変換を行い，音階を求め，それをデータとしたシステムです． 今ならもっといいアーキテクチャが思い浮かびます． 研究のスライドはYoutubeに公開しています． 基礎研究編です．
+応用研究編です．
+余談 この記事を書くには今更すぎますが（執筆時は登壇から3年が経過），インターン面接などでこの件について深堀されるので，記事にまとめました．</description></item></channel></rss>

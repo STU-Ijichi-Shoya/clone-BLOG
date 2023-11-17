@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>解説 on KBSIs' Blog</title><link>https://idichi.tk/tags/%E8%A7%A3%E8%AA%AC/</link><description>Recent content in 解説 on KBSIs' Blog</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Sun, 22 Dec 2019 15:16:05 +0900</lastBuildDate><atom:link href="https://idichi.tk/tags/%E8%A7%A3%E8%AA%AC/index.xml" rel="self" type="application/rss+xml"/><item><title>【文系理系必見】仕事を奪う「AI」を4分で解説</title><link>https://idichi.tk/blog/advent-hack/</link><pubDate>Sun, 22 Dec 2019 15:16:05 +0900</pubDate><guid>https://idichi.tk/blog/advent-hack/</guid><description>ディープラーニングの基礎を4分で解説 本記事は大阪工業大学アドベントカレンダー 12/22枠に投稿するために書かれたものです．詳しくは最後に．
+短い自己紹介 名前は伊地知翔也と言います．高校時代からニューラルネットワークを研究し，高速化手法を開発，SSH研究発表に招待され研究成果を発表しました! 詳しくはこちら
+ほんとに足し算と掛け算だけ？ AIが仕事を奪うという流行り言葉はすでに沢山の人が聞いたことがあると思う．しかし，肝心の仕組みはまったく知らない人が多いと感じる．
+例えば，AIアシスタント などの仕組みしろうと思えば，深い数学知識が必要になるが，AIのそもそもの原理はいたって単純だ．原理から出発すれば，意外と簡単なことに気づくと思う．
+では，4分タイマースタート！！ 判断を代替するAIを考える ここでは焼肉に誘われたときの判断をAIにさせることを考える．
+判断するのに必要な要素 まず，焼肉に誘われたら何を考えるだろうか？
+お店の質
+お店の値段
+友好度(誘ってきたメンツ)
+&amp;hellip;
+など，さまざまな情報の中から判断する．
+また，その中の情報でも，人によって，どれを優先するかも異なる．
+（値段を重要視する人もいれば，メンツを重要視する人もいる．） これらを合計して，ある一定の値になれば誘いを受ける（行く）のではないだろうか． これらを数式で落とし込んでみる．
+まず，判断の元となる情報(条件)を $$
+\begin{align} &amp;amp;x_1 \quad(焼肉のお店の質)\\\ &amp;amp;x_2 \quad(お店の値段)\\\ &amp;amp;x_3 \quad(友好度)\\\ &amp;amp;&amp;hellip; \quad(他の条件)\\\ &amp;amp;x_n \quad(条件はn個ある) \end{align} $$
+次に優先度（ここから重みと呼ぶことにする）を $$ \begin{align} &amp;amp;w_1\quad (お店の質を重要視する度合い) \\\ &amp;amp;w_2\quad (お店の値段を重要視する度合い) \\\ &amp;amp;w_3 \quad (誘ってきたメンツを重要視する度合い) \\\ &amp;amp;&amp;hellip;\quad (他の条件を重要視する度合い) \\\ &amp;amp;w_n \quad (n個目の条件を重要視する度合い) \\\ \end{align} $$
+とする．これをかけて足した値(yとする)が判断の値となるので， $$ y=(x_1 \times w_1) + (x_2 \times w_2) + (x_3 \times w_3) +&amp;hellip;+(x_n \times w_n) $$ 判断の値一定以上(θとする)になるとき，行く（誘いを受ける）ので，行く時を1 行かない時を0とする． 活性化関数と呼ぶが本記事では名前は気にしなくていい:） $$ \begin{eqnarray} 行く(1)行かない(0) = \begin{cases} 1 &amp;amp; ( y \geqq θ ) \quad yがθ(基準)以上なら行く \\\ 0 &amp;amp; ( y &amp;lt; θ ) \quad yがθ(基準)を下回ったら行かない \end{cases} \end{eqnarray} $$</description></item></channel></rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Music on KBSIs&#39; Blog</title>
+    <link>https://idichi.tk/music/</link>
+    <description>Recent content in Music on KBSIs&#39; Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Sun, 19 Jan 2020 21:16:05 +0900</lastBuildDate><atom:link href="https://idichi.tk/music/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FAV MUSIC</title>
+      <link>https://idichi.tk/music/fav/</link>
+      <pubDate>Sun, 19 Jan 2020 21:16:05 +0900</pubDate>
+      
+      <guid>https://idichi.tk/music/fav/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

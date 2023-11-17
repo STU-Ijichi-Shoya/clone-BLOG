@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArcFace on KBSIs' Blog</title><link>https://idichi.tk/tags/arcface/</link><description>Recent content in ArcFace on KBSIs' Blog</description><generator>Hugo -- gohugo.io</generator><language>jp</language><lastBuildDate>Thu, 17 Dec 2020 15:16:05 +0900</lastBuildDate><atom:link href="https://idichi.tk/tags/arcface/index.xml" rel="self" type="application/rss+xml"/><item><title>【調査中】ArcFaceなどのメトリックラーニング</title><link>https://idichi.tk/blog/servay-arcface/</link><pubDate>Thu, 17 Dec 2020 15:16:05 +0900</pubDate><guid>https://idichi.tk/blog/servay-arcface/</guid><description>ArcFaceって ArcFaceは顔認証を行えるメトリックラーニングの構造のこと．
+ArcFaceは入力されたデータに対して，一人の画像に対するユニークな特徴ベクトルを算出する．
+例えばA,B,C,&amp;hellip; という人物の画像が一人に対して，複数毎あったとする． Aの画像が入力されたときArcFaceはY_Aのベクトルを算出するよう学習する． 一方，Bの画像が入力されたときもY_Bを算出する.
+これにより，未知の人物の画像が入力されたときも，人物ごとにユニークなベクトルを算出することによって，
+ベクトル間のCos類似度を求めることにより，同一人物かを判定することが可能になる．
+元論文のarXiv
+インストール 論文の著者が実装と学習済みの重みを公開している．
+Mxnetというフレームワークだが，ArcFaceを使うだけなら何も気にすることはない．
+実行には
+$ pip3 install mxnet==1.6.0 が必要である． ただし，GPU環境の場合，cuda==10.2をインストールし，
+$ pip3 install mxnet-cu102==1.6.0 を実行する．
+あとは，
+$ pip3 install -U insightface でインストールは完了．
+試す 基本的には，チュートリアルを参考にライブラリを読み解いていく．
+自分でも，少し試したので，jupyter notebookを貼っておく．
+不明点 論文や解説記事を読んでArcFaceの学習方法は理解したものの，肝心の顔認証データセットの目的変数がわからない．具体的には，ユニークなIDをどうやって，つけているのか．論文中に各データセットの示された人物の数は一定でないから．
+[追記] 論文をよく見ると，参考文献として， [32] Y. Sun, Y. Chen, X. Wang, and X. Tang. Deep learning face representation by joint identification-verification. In NIPS, 2014. が載っていた． これによるとDeepIDを用いて特徴ベクトルを決定するとある． DeepIDについては，解説記事を発見した． 参考記事
+これを用いてDeepIDをつけているのか納得．なお，参考記事はDeepID 1について解説されているが，参考文献はDeepID2について説明されている． おおむねは同じだが，違いは，顔のパーツ位置（face landmark）による畳み込み前の整列や特徴ベクトルを200次元まで拡張した，ネットワークを深くしたなどの違いがある．（詳しく論文見てないけど）
+結論 参考文献を読もう．</description></item></channel></rss>
